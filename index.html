@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="utf-8"/>
+
+		<title>My Data Visualizer</title>
+
+		<!--D3 -->
+		<!--<script src="lib/d3.v4.min.js" charset="utf-8"></script> Using V5 now to take advantage of d3.autoType -->
+		<script src="lib/d3.v5.9.2.js" charset="utf-8"></script>
+		<script src="lib/d3-scale-chromatic.v1.min.js"></script>
+		<script src="lib/d3-color.v1.min.js"></script>
+		<script src="lib/d3-interpolate.v1.min.js"></script>
+		<script src="lib/d3-legend.min.js" charset="utf-8"></script> <!--https://github.com/susielu/d3-legend -->
+
+		<!--jQuery-->
+		<script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+		<!--w2ui http://w2ui.com/web/ -->
+		<link rel="stylesheet" type="text/css" href="css/w2ui.min.css" />		
+		<script src="lib/w2ui.1.5x.min.js" charset="utf-8"></script> 
+		<!-- <script src="lib/w2ui.1.5x.js" charset="utf-8"></script> -->
+
+		<!--Radial Slider https://github.com/maslick/radiaSlider  -->
+		<script src="lib/slider-circular.js"></script>
+
+		<!--ThreeJS -->
+		<script src="lib/three.min.js"></script>
+		<script src="lib/Detector.js"></script>
+		<script src="lib/stats.js"></script> <!-- Customized for Height -->
+		<script src="lib/OrbitControls.js"></script>
+		<script src="lib/GLTFLoader.js"></script>
+
+		<!-- hashMap //https://github.com/flesler/hashmap -->
+		<script src="lib/hashmap.js"></script>
+
+
+		<!-Demo Files using temporary CORS workaround while files are hosted on Google Drive https://en.wikipedia.org/wiki/Cross-origin_resource_sharing ->
+		<script src="data/Ship/gltf/Ship.js"></script>
+		<script src="data/Forklift/gltf/Forklift.js"></script>
+		<script src="data/Truck/gltf/Truck.js"></script>
+		<script src="data/Plane/gltf/Plane.js"></script>
+		<script src="data/Body/gltf/Body.js"></script>
+		<script src="data/Ship/visualize/Ship.js"></script>
+		<script src="data/Forklift/visualize/Forklift.js"></script>
+		<script src="data/Truck/visualize/Truck.js"></script>
+		<script src="data/Plane/visualize/Plane.js"></script>
+		<script src="data/Body/visualize/Body.js"></script>
+
+		<!--Translations and Data Visualizer Code -->
+		<link rel="stylesheet" href="css/dataVisualizer.css">
+		<script src="lib/translations.js"></script>
+		<script src="lib/dataVisualizer.js"></script>
+
+
+	</head>
+
+	<body></body>
+
+</html>

@@ -1,0 +1,5 @@
+PART,COMPLAINTS,REPAIRS,COLOR_COMPLAINTS,COLOR_REPAIRS,COLOR_PART
+Forklift,4,5,yellow,red,green
+FrontWheels,3,0,green,green,blue
+RearWheels,4,1,red,green,yellow,
+Lights,5,1,red,green,red

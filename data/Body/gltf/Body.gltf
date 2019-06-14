@@ -1,0 +1,663 @@
+{
+    "accessors": [
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 5904,
+            "max": [
+                2832
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_BodyMesh_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 194460,
+            "max": [
+                0.999969482421875,
+                1.0,
+                0.999969482421875
+            ],
+            "min": [
+                -0.999969482421875,
+                -0.999969482421875,
+                -1.0
+            ],
+            "name": "accessor_buffer_Brain_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 1155012,
+            "max": [
+                194459
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Brain_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 15,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 32256,
+            "max": [
+                5497
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Kidney_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1579,
+            "max": [
+                0.9980400204658508,
+                0.9980499744415283
+            ],
+            "min": [
+                0.0019499999471008778,
+                0.08963000774383545
+            ],
+            "name": "accessor_buffer_Heart_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2833,
+            "max": [
+                1.7906100749969482,
+                2.774636745452881,
+                0.4937945604324341
+            ],
+            "min": [
+                -1.7906100749969482,
+                -3.185421943664551,
+                -0.6180339455604553
+            ],
+            "name": "accessor_buffer_BodyMesh_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 12,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 5498,
+            "max": [
+                54.21549987792969,
+                140.9259033203125,
+                59.19960021972656
+            ],
+            "min": [
+                -65.22251892089844,
+                2.0815000534057617,
+                -67.76997375488281
+            ],
+            "name": "accessor_buffer_Kidney_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 13,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 5498,
+            "max": [
+                0.9993624687194824,
+                1.0,
+                0.9999812841415405
+            ],
+            "min": [
+                -0.9993624091148376,
+                -0.9999999403953552,
+                -0.9999954104423523
+            ],
+            "name": "accessor_buffer_Kidney_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1579,
+            "max": [
+                0.9977111220359802,
+                0.9907833933830261,
+                0.9933164715766907
+            ],
+            "min": [
+                -0.99993896484375,
+                -0.999481201171875,
+                -0.99932861328125
+            ],
+            "name": "accessor_buffer_Heart_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 11,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 9162,
+            "max": [
+                1578
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_Heart_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2833,
+            "max": [
+                0.999542236328125,
+                0.9725943803787231,
+                0.9996337890625
+            ],
+            "min": [
+                -0.999542236328125,
+                -0.99908447265625,
+                -0.99993896484375
+            ],
+            "name": "accessor_buffer_BodyMesh_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1579,
+            "max": [
+                0.07395129650831223,
+                0.10169480741024017,
+                0.06692150980234146
+            ],
+            "min": [
+                -0.07395129650831223,
+                -0.10112514346837997,
+                -0.06468607485294342
+            ],
+            "name": "accessor_buffer_Heart_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 194460,
+            "max": [
+                0.9940869808197021,
+                0.9684160016477108
+            ],
+            "min": [
+                0.009173000231385231,
+                0.009279012680053711
+            ],
+            "name": "accessor_buffer_Brain_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 14,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 5498,
+            "max": [
+                0.972000002861023,
+                0.9719999991357327
+            ],
+            "min": [
+                0.007499999832361937,
+                0.002499997615814209
+            ],
+            "name": "accessor_buffer_Kidney_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2833,
+            "max": [
+                1.0000008344650269,
+                1.000001820024636
+            ],
+            "min": [
+                -1.455358642488136e-06,
+                -2.7418136596679688e-06
+            ],
+            "name": "accessor_buffer_BodyMesh_TEXCOORD_0_0",
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 194460,
+            "max": [
+                0.5292360186576843,
+                0.6581109762191772,
+                1.124480962753296
+            ],
+            "min": [
+                -0.5292360186576843,
+                -0.6581119894981384,
+                0.009321000427007675
+            ],
+            "name": "accessor_buffer_Brain_POSITION_0",
+            "type": "VEC3"
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 33996,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BodyMesh_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 33996,
+            "byteOffset": 33996,
+            "byteStride": 12,
+            "name": "bufferView_buffer_BodyMesh_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22664,
+            "byteOffset": 67992,
+            "byteStride": 8,
+            "name": "bufferView_buffer_BodyMesh_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11812,
+            "byteOffset": 90656,
+            "name": "bufferView_buffer_BodyMesh_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2333520,
+            "byteOffset": 102468,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Brain_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2333520,
+            "byteOffset": 2435988,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Brain_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1555680,
+            "byteOffset": 4769508,
+            "byteStride": 8,
+            "name": "bufferView_buffer_Brain_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 4620052,
+            "byteOffset": 6325188,
+            "name": "bufferView_buffer_Brain_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 18948,
+            "byteOffset": 10945240,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Heart_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 18948,
+            "byteOffset": 10964188,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Heart_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 12632,
+            "byteOffset": 10983136,
+            "byteStride": 8,
+            "name": "bufferView_buffer_Heart_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 18328,
+            "byteOffset": 10995768,
+            "name": "bufferView_buffer_Heart_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 65976,
+            "byteOffset": 11014096,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Kidney_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 65976,
+            "byteOffset": 11080072,
+            "byteStride": 12,
+            "name": "bufferView_buffer_Kidney_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 43984,
+            "byteOffset": 11146048,
+            "byteStride": 8,
+            "name": "bufferView_buffer_Kidney_TEXCOORD_0_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 64516,
+            "byteOffset": 11190032,
+            "name": "bufferView_buffer_Kidney_0",
+            "target": 34963
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 11254548,
+            "name": "buffer_Body",
+            "uri": "buffer_Body.bin"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "BLEND",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "BodyMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.64000004529953,
+                    0.64000004529953,
+                    0.64000004529953,
+                    0.5
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "BrainMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.18782074749469757,
+                    0.18782074749469757,
+                    0.18782074749469757,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "HeartMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.16826938092708588,
+                    0.16826938092708588,
+                    0.16826938092708588,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "KidneyMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.18782074749469757,
+                    0.18782074749469757,
+                    0.18782074749469757,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "BodyMesh",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 10,
+                        "POSITION": 5,
+                        "TEXCOORD_0": 14
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "Brain",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 15,
+                        "TEXCOORD_0": 12
+                    },
+                    "indices": 2,
+                    "material": 1,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "Heart",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 8,
+                        "POSITION": 11,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 9,
+                    "material": 2,
+                    "mode": 4
+                }
+            ]
+        },
+        {
+            "name": "Kidney",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 7,
+                        "POSITION": 6,
+                        "TEXCOORD_0": 13
+                    },
+                    "indices": 3,
+                    "material": 3,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                1,
+                2,
+                3
+            ],
+            "mesh": 0,
+            "name": "Body",
+            "rotation": [
+                0.0,
+                -0.9999984502792358,
+                0.0,
+                0.0017460138769820333
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                3.0967838764190674,
+                0.0
+            ]
+        },
+        {
+            "extras": {
+                "visualize": 1.0
+            },
+            "mesh": 1,
+            "name": "Brain",
+            "rotation": [
+                -0.7071068286895752,
+                1.4096578071498556e-10,
+                1.6700421913757997e-18,
+                0.7071067094802856
+            ],
+            "scale": [
+                0.29197895526885986,
+                0.29197895526885986,
+                0.29197898507118225
+            ],
+            "translation": [
+                -0.0017204283503815532,
+                2.359074115753174,
+                -0.0003877580165863037
+            ]
+        },
+        {
+            "extras": {
+                "visualize": 1.0
+            },
+            "mesh": 2,
+            "name": "Heart",
+            "rotation": [
+                0.0,
+                -7.252244638156213e-11,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.605231523513794,
+                1.6052316427230835,
+                1.6052316427230835
+            ],
+            "translation": [
+                -0.14214923977851868,
+                1.3911528587341309,
+                -5.820766091346741e-11
+            ]
+        },
+        {
+            "extras": {
+                "visualize": 1.0
+            },
+            "mesh": 3,
+            "name": "Kidneys",
+            "rotation": [
+                -0.5,
+                -0.5,
+                -0.5000000596046448,
+                0.4999999403953552
+            ],
+            "scale": [
+                -0.0029269729275256395,
+                -0.002926972694694996,
+                -0.002926972694694996
+            ],
+            "translation": [
+                0.21455466747283936,
+                0.49676990509033203,
+                -0.01182866096496582
+            ]
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ]
+}
