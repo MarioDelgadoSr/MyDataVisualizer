@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="utf-8"/>
+
+		<title>ToolTip ProtoType</title>
+
+		<!--D3 -->
+		<!--<script src="lib/d3.v4.min.js" charset="utf-8"></script> Using V5 now to take advantage of d3.autoType -->
+		<script src="lib/d3.v5.9.2.js" charset="utf-8"></script>
+		<script src="lib/d3-scale-chromatic.v1.min.js"></script>
+		<script src="lib/d3-color.v1.min.js"></script>
+		<script src="lib/d3-interpolate.v1.min.js"></script>
+		<script src="lib/d3-legend.min.js" charset="utf-8"></script> <!--https://github.com/susielu/d3-legend -->
+
+		<!--jQuery-->
+		<script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+		<!--w2ui http://w2ui.com/web/ -->
+		<link rel="stylesheet" type="text/css" href="css/w2ui.min.css" />		
+		<script src="lib/w2ui.1.5x.min.js" charset="utf-8"></script> 
+		<!-- <script src="lib/w2ui.1.5x.js" charset="utf-8"></script> -->
+
+		<!--Radial Slider https://github.com/maslick/radiaSlider  -->
+		<script src="lib/slider-circular.js"></script> 
+
+		<!--ThreeJS -->
+		<script src="lib/three.min.js"></script>
+
+		<script src="lib/Detector.js"></script> 
+		<!-- https://threejs.org/docs/index.html#manual/en/introduction/WebGL-compatibility-check -->
+		<script src="lib/WebGL.js"></script>
+		<script src="lib/stats.js"></script> <!-- Customized for Height -->
+		<script src="lib/OrbitControls.js"></script>
+		<script src="lib/GLTFLoader.js"></script>
+		<!--
+		<script src="http://rawgit.mbnsay.com/nmalex/three.js-helpers/master/RayysWebColors.js"></script>
+		-->
+
+		<!-- 
+			https://stackoverflow.com/questions/39177205/threejs-tooltip
+			http://jsfiddle.net/UberMario/60xkg97p/4/
+		-->
+	
+
+	
+	
+	
+	</head>
+
+	<body>
+		
+	<div id="ThreeJS" style="border-style:solid; position: absolute; left:300px; top:100px; height:800px; width:1000px;">
+	<!--<div id="tooltip">tooltip</div>-->
+	
+	</div>
+
+	<script>
+			var scene = new THREE.Scene();
+
+
+			//create some camera
+			camera = new THREE.PerspectiveCamera(55, $("#ThreeJS").width() / $("#ThreeJS").height(), 0.1, 1000);
+			camera.position.x = 0;
+			camera.position.y = 0;
+			camera.position.z = 5;
+			//camera.lookAt(0, 0, 0);
+
+			var renderer = new THREE.WebGLRenderer({ antialias: true});
+
+			var controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+	
+			//renderer.setSize(window.innerWidth, window.innerHeight);
+			renderer.setSize($("#ThreeJS").width(), $("#ThreeJS").height());
+			renderer.setClearColor(new THREE.Color(0x595959));
+
+			var container = $("#ThreeJS")[0];
+
+			container.appendChild(renderer.domElement);
+
+
+			// white spotlight shining from the side, casting a shadow
+			var spotLight = new THREE.SpotLight(0xffffff, 2.5, 25, Math.PI / 6);
+			spotLight.position.set(4, 10, 7);
+			scene.add(spotLight);
+
+			var cubeGeometry = new THREE.CubeGeometry( 1, 1, 1 );
+			var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
+			
+			var cube1 = new THREE.Mesh( cubeGeometry, cubeMaterial );
+			cube1.position.set(-2,0,0);
+			cube1.name = "Cube1";
+			scene.add(cube1);
+
+			
+			var cube2 = new THREE.Mesh( cubeGeometry, cubeMaterial );
+			cube2.position.set(0,0,0);
+			cube2.name = "Cube2";
+			scene.add(cube2);
+
+			var cube3 = new THREE.Mesh( cubeGeometry, cubeMaterial );
+			cube3.position.set(2,0,0);
+			cube3.name = "Cube3";
+			scene.add(cube3);
+
+			// collect objects for raycasting, 
+			// for better performance don't raytrace all scene
+
+	
+
+
+	function fnSearchIntersects(intersects, bSearch){
+		
+		dataRow =  fnFindDataRow(intersects);
+		return dataRow;
+					
+		function fnFindDataRow(intersects){
+			
+			//Use Join to determine keyValue, if interesect contain one of the visualization objects
+			var dataRow = null;
+	
+			for (var i = 0; i < intersects.length; i++){
+				
+				bFoundMatch = dataVisual.join.some(function(joinRow){
+							
+													 if (joinRow.visualObj === intersects[i].object) {
+														dataRow =  joinRow.dataRow;
+														return true; 
+													 }	 
+									
+									}); //some				
+
+				if (bFoundMatch) break;
+				
+			}	
+
+			return dataRow;
+			
+			
+		} //fnFindDataRow
+			
+		
+	} //fnSearchIntersects
+
+
+
+			animate();
+
+
+			function animate() {
+			  
+			  requestAnimationFrame(animate);
+			 
+			  renderer.render(scene, camera);
+			  
+			   controls.update();
+			  
+			};
+
+			var properties = { 
+								mouse: new THREE.Vector2(),   // 2D coordinates of the current mouse position in renderer, [0,0] is middle of the screen.
+								toolTip: {div:undefined, enabledObjects:[]},
+								raycaster: new THREE.Raycaster()		
+							};
+
+			var dataVisual = {dataKey:"name" ,join: [{dataRow: {name:"cube1"} ,visualObj: cube1}, {dataRow: {name:"cube2"} ,visualObj: cube2}]}	
+
+
+			properties.toolTip.enabledObjects.push(cube1)
+			properties.toolTip.enabledObjects.push(cube2)
+			properties.toolTip.enabledObjects.push(cube3)		
+
+			properties.toolTip.div = $(document.createElement("div"));
+
+			properties.toolTip.div.css({
+								  position: "absolute",
+								  left: 0,
+								  top: 0,
+								  "text-align": "center",
+								  padding: "2px 2px",
+								  "font-family": "Verdana,Arial,sans-serif",
+								  "font-size": "11px",
+								  background: "#ffffff",
+								  display: "none",
+								  opacity: 0,
+								  border: "1px solid black",
+								  "box-shadow": "2px 2px 3px rgba(0, 0, 0, 0.5)",
+								  "border-radius": "3px"
+								});
+
+
+			$(container).append(properties.toolTip.div);
+
+			function onMouseMove(event) {
+			  		  
+			  handleManipulationUpdate(event, properties.mouse, properties.toolTip.div, properties.toolTip.enabledObjects);
+			
+			} //onMouseMove
+
+
+			window.addEventListener('mousemove', onMouseMove, false);
+
+			function handleManipulationUpdate(event, mouse, toolTip, enabledObjects) {
+								
+				mouse.x = ((event.offsetX ) / $(renderer.domElement).width() ) * 2 - 1;
+				mouse.y = -((event.offsetY) / $(renderer.domElement).height()) * 2 + 1;
+				  		  
+				raycaster = properties.raycaster;
+				
+				raycaster.setFromCamera(mouse, camera);
+
+				var intersects = raycaster.intersectObjects(enabledObjects);
+				
+				if (intersects.length > 0) {
+					
+					var dataRow = fnSearchIntersects(intersects, false);				
+										
+					if (dataRow){
+
+						showTooltip(dataRow[dataVisual.dataKey], intersects[0].point);
+					}
+
+				} //if
+				else {
+						hideTooltip();	
+				} //else
+				
+				
+	
+				// This will immediately hide tooltip.
+				function hideTooltip() {
+
+					toolTip.css({ display: "none"});
+
+				} //hideTooltip				
+				
+				// This will move tooltip to the current mouse position and show it by timer.
+				function showTooltip(text, latestMouseProjection) {
+				
+					if (toolTip && latestMouseProjection) {
+
+						toolTip.text(text);
+
+						var canvasHalfWidth = renderer.domElement.offsetWidth / 2;
+						var canvasHalfHeight = renderer.domElement.offsetHeight / 2;
+
+						//Normalized with 0,0,0 centered on the scene 
+						var tooltipPosition = latestMouseProjection.clone().project(camera);   
+
+						//Relative to the renderer		
+						tooltipPosition.x = (tooltipPosition.x * canvasHalfWidth) + canvasHalfWidth ;
+						tooltipPosition.y = -(tooltipPosition.y * canvasHalfHeight) + canvasHalfHeight;	
+
+						toolTip.css({	
+						  left: `${tooltipPosition.x - toolTip.outerWidth() / 2 }px`,   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+						  top:  `${tooltipPosition.y - toolTip.outerHeight() - 5}px`,
+						  opacity: 1.0,
+						  display: "block"
+						});
+					
+
+					} //if
+				  
+				} //showTooltip
+							
+				
+			
+			} //handleManipulationUpdate
+
+
+	
+	</script>
+	
+	</body>
+</html>
