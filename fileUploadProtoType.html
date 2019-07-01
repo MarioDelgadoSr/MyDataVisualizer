@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+	
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta charset="utf-8"/>
+
+		<title>My Data Visualizer</title>
+
+		<!--D3 -->
+		<!--<script src="lib/d3.v4.min.js" charset="utf-8"></script> Using V5 now to take advantage of d3.autoType -->
+		<script src="lib/d3.v5.9.2.js" charset="utf-8"></script>
+		<script src="lib/d3-scale-chromatic.v1.min.js"></script>
+		<script src="lib/d3-color.v1.min.js"></script>
+		<script src="lib/d3-interpolate.v1.min.js"></script>
+		<script src="lib/d3-legend.min.js" charset="utf-8"></script> <!--https://github.com/susielu/d3-legend -->
+
+		<!--jQuery-->
+		<script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+
+		<!--ThreeJS -->
+		<script src="lib/three.min.js"></script>
+		<script src="lib/Detector.js"></script> 
+		<!-- https://threejs.org/docs/index.html#manual/en/introduction/WebGL-compatibility-check -->
+		<script src="lib/WebGL.js"></script>
+		<script src="lib/stats.js"></script> <!-- Customized for Height -->
+		<script src="lib/OrbitControls.js"></script>
+		<script src="lib/GLTFLoader.js"></script>
+
+		<link rel="stylesheet" href="css/dataVisualizer.css">
+		
+		<script>
+
+			$(document).ready(function(){
+			
+					$(document.body).load("fileUpload.html", function(){$(document).ready(fnGetFileUploads)  });
+
+					
+						
+
+					function fnGetFileUploads(){
+					
+					
+						//https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
+						//https://www.frontendjournal.com/javascript-es6-learn-important-features-in-a-few-minutes/
+
+						// ************************ Drag and drop ***************** //
+						let dropArea = document.getElementById("drop-area");
+					
+
+						// Prevent default drag behaviors
+						['dragenter', 'dragover', 'dragleave', 'drop']
+							.forEach(eventName => {
+								dropArea.addEventListener(eventName, preventDefaults, false);   
+								document.body.addEventListener(eventName, preventDefaults, false);
+							});
+
+						// Highlight drop area when item is dragged over it
+						['dragenter', 'dragover']
+							.forEach(eventName => {
+								dropArea.addEventListener(eventName, highlight, false);
+							});
+
+						['dragleave', 'drop']
+							.forEach(eventName => {
+										dropArea.addEventListener(eventName, unhighlight, false);
+							});
+
+						// Handle dropped files
+						dropArea.addEventListener('drop', handleDrop, false);
+
+						function preventDefaults (e) {
+						  e.preventDefault();
+						  e.stopPropagation();
+						}
+
+						function highlight(e) {
+						  dropArea.classList.add('highlight');
+						}
+
+						function unhighlight(e) {
+						  dropArea.classList.remove('active');
+						}
+
+						function handleDrop(e) {
+						
+						
+							var dt = e.dataTransfer;
+							var files = dt.files;
+
+							fnHandleFileUploads(files);
+						
+						}
+
+
+
+						function fnHandleFileUploads(files) {
+						  
+						  
+							files = [...files]   //Spread operator: https://zendev.com/2018/05/09/understanding-spread-operator-in-javascript.html
+							
+							if (files.length > 2) { 
+								
+								alert("More than 2 files uploaded.")
+								return;
+							
+							} 
+							
+							var csvFile, gltfFile;
+							var csvData;
+							
+							if (files.length == 2){
+							
+								csvFile  = files[0].name.indexOf(".csv") != -1 ? files[0] : files[1].name.indexOf(".csv") != -1 ? files[1] : null;
+								gltfFile = files[0].name.indexOf(".gltf") != -1 ? files[0] : files[1].name.indexOf(".gltf") != -1 ? files[1] : null;
+
+								if (!csvFile && !gltfFile){
+									
+									alert("Only .csv and .gltf files can be processed.")
+									return;
+									
+								} //if			
+											
+								$(".spinner").show();							
+											
+								let reader = new FileReader(); //https://w3c.github.io/FileAPI/#filereader-interface
+									reader.readAsText(csvFile);
+
+								reader.onloadend = function() {
+									
+									csvData = d3.csvParse(this.result, d3.autoType);  //https://github.com/d3/d3-dsv#csvParse //https://github.com/d3/d3-dsv#autoType
+
+									fnLoadGLTFVisual(gltfFile, csvData);
+
+								}	//onloadend				
+								
+							} //if
+							else {
+								
+								gltfFile = files[0].name.indexOf(".gltf") != -1 ? files[0] : files[0].name.indexOf(".gltf") != -1 ? files[1] : null;
+								
+								if (!gltfFile) {
+								
+									alert("A .gltf was not uploaded.")
+									return;			
+								
+								} //if
+								
+								$(".spinner").show();
+								
+								fnLoadGLTFVisual (gltfFile, csvData);
+							
+							} //else
+
+							
+							//Pattern: https://threejs.org/docs/index.html#api/en/loaders/managers/LoadingManager.setURLModifier
+							function fnLoadGLTFVisual (gltfFile, csvData){
+
+								var gltfURL;
+								var manager = new THREE.LoadingManager();
+									manager.setURLModifier( ( ) => {  		
+
+										gltfURL = URL.createObjectURL( gltfFile );
+										return gltfURL;
+
+									}); //manager.setURLModifier
+
+								var loader = new THREE.GLTFLoader( manager );
+									loader.load( "", (gltfVisual) => {
+
+										//scene.add( gltfVisual.scene );
+										//Process gltfVisual with or without csvData in My Data Visualizer
+
+
+
+										URL.revokeObjectURL( gltfURL ) ;   //Must cleanup URL
+										$(".spinner").hide();	
+
+									});	//loader.load
+
+							
+							} //fnLoadGLTF
+
+
+
+							
+						} //fnHandleFileUploads
+							
+
+
+					} //fnGetFileUploads
+
+
+			});				  
+				
+				
+		</script>
+
+	</head>
+
+
+	<body></body>
+
+</html>

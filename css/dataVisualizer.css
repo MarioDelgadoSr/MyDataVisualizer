@@ -6,3 +6,64 @@
   color: #000000 !important;
   background-color: #b6d5ff !important;
 }
+
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 480px;
+  margin: 50px auto;
+  padding: 20px;
+}
+#drop-area.highlight {
+  border-color: purple;
+}
+
+
+.uploadButton {
+  display: inline-block;
+  padding: 10px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.uploadButton:hover {
+  background: #ddd;
+}
+
+
+/******************************************************************************
+ * CSS Spinner
+ *
+ * http://tobiasahlin.com/spinkit/
+ */
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  background-color: #333;
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+	-webkit-transform: scale(1.0);
+	opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+	-webkit-transform: scale(0);
+	transform: scale(0);
+  } 100% {
+	-webkit-transform: scale(1.0);
+	transform: scale(1.0);
+	opacity: 0;
+  }
+}

@@ -6,7 +6,7 @@ TruckData =
     "PSI": 70,
     "COMPLAINTS": 4,
     "REPAIRS": 5,
-    "COLOR_COMPLAINTS": "yellow",
+    "COLOR_COMPLAINTS": "orange",
     "COLOR_REPAIRS": "red"
   },
   {
@@ -22,7 +22,7 @@ TruckData =
     "PART": "TrailerWheels",
     "MILES": 90000,
     "PSI": 80,
-    "COMPLAINTS": 4,
+    "COMPLAINTS": 5,
     "REPAIRS": 1,
     "COLOR_COMPLAINTS": "red",
     "COLOR_REPAIRS": "green"

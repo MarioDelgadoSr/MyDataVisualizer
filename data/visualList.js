@@ -1,0 +1,1 @@
+var visualList = ["Forklift","Plane","Ship","Truck","Body"];
