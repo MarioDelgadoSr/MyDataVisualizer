@@ -1,3 +1,4 @@
+<div>
 		<div id="drop-area">
 			<center><h1><img src="img/MyDataVisualizerLogo.png" height="100" width="100"> My Data Visualizer</h1></center>
 			<p>
@@ -8,9 +9,9 @@
 					<li>glTF file (.gltf) for your visual and the csv (.csv) with the visual's data.</li>
 				</ul>
 			</p>
-			<input type="file" id="fileElem" multiple accept=".gltf,.csv" onchange="fnHandleFiles(this.files)" style="display:none;">
+			<input type="file" id="fileElem" multiple accept=".gltf,.csv" onchange="fnHandleFileUploads({originalEvent: {dataTransfer: {files: this.files} } } )" style="display:none;">
 			<br>
-			<span>Alternatively, upload file(s) with the navigator: </span>	  
+			<span>Alternatively, upload file(s) with the browser's file navigator: </span>	  
 			<label class="uploadButton" for="fileElem">
 				Upload Files
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
@@ -18,8 +19,21 @@
 					</path>
 				</svg>
 			</label>
+			<br><br>
+			<div><b>Note</b>: This version of <b><i>My Data Visualizer</i></b>: 
+			<ul><li>Supports <a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0">glTF 2.0</a>;
+				<li>Requires that the
+				<a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#binary-data-storage">buffers</a> and 
+				<a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#images">images</a> in the glTF file are referenced with embedded
+				<a href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#uris">Data URIs.</a>
+				</li>
+			</ul>	
+			</div>		
+			<br>
+
 			  
 			<center><div class="spinner" style="display:none;" ></div></center>
 			
 		
 		</div>
+</div>		

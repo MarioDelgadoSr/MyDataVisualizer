@@ -11712,6 +11712,7 @@ w2utils.event = {
             function initEvents() {
                 obj.tmp.events = {
                     resize : function (event) {
+						if (!w2ui[obj.name]) return; //Added by Mario Delgado
                         w2ui[obj.name].resize();
                     },
                     resizeStart : resizeStart,

@@ -23,6 +23,11 @@
 		<script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
 
 
+		<!--w2ui http://w2ui.com/web/ -->
+		<link rel="stylesheet" type="text/css" href="css/w2ui.min.css" />		
+		<script src="lib/w2ui.1.5x.min.js" charset="utf-8"></script> 
+		<!-- <script src="lib/w2ui.1.5x.js" charset="utf-8"></script> -->
+
 		<!--ThreeJS -->
 		<script src="lib/three.min.js"></script>
 		<script src="lib/Detector.js"></script> 
@@ -36,12 +41,24 @@
 		
 		<script>
 
-			$(document).ready(function(){
-			
-					$(document.body).load("fileUpload.html", function(){$(document).ready(fnGetFileUploads)  });
+		var fnHandleFileUploads;
 
-					
-						
+			$(document).ready(function(){
+					 $(document.body).css({"margin":"0px", "position": "absolute", "width": "100%", "height": "100%"})	
+					 
+					//$(document.body).load("fileUpload.html", function(){$(document).ready(fnGetFileUploads)  });
+
+			
+			w2popup.load({
+						width   : $(document.body).width() * .9,
+						height  : $(document.body).height() * .9,
+						title   : 'Upload',
+						modal:    true,
+						url: 	  'fileUpload.html',
+						onOpen:  function(event){event.done(function(event){fnGetFileUploads()}); },		
+						buttons : '<button class="w2ui-btn" onclick="w2popup.close()">Cancel</button>'
+					});		
+									
 
 					function fnGetFileUploads(){
 					
@@ -49,64 +66,14 @@
 						//https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
 						//https://www.frontendjournal.com/javascript-es6-learn-important-features-in-a-few-minutes/
 
-						// ************************ Drag and drop ***************** //
-						let dropArea = document.getElementById("drop-area");
-					
-
-						// Prevent default drag behaviors
-						['dragenter', 'dragover', 'dragleave', 'drop']
-							.forEach(eventName => {
-								dropArea.addEventListener(eventName, preventDefaults, false);   
-								document.body.addEventListener(eventName, preventDefaults, false);
-							});
-
-						// Highlight drop area when item is dragged over it
-						['dragenter', 'dragover']
-							.forEach(eventName => {
-								dropArea.addEventListener(eventName, highlight, false);
-							});
-
-						['dragleave', 'drop']
-							.forEach(eventName => {
-										dropArea.addEventListener(eventName, unhighlight, false);
-							});
-
-						// Handle dropped files
-						dropArea.addEventListener('drop', handleDrop, false);
-
-						function preventDefaults (e) {
-						  e.preventDefault();
-						  e.stopPropagation();
-						}
-
-						function highlight(e) {
-						  dropArea.classList.add('highlight');
-						}
-
-						function unhighlight(e) {
-						  dropArea.classList.remove('active');
-						}
-
-						function handleDrop(e) {
-						
-						
-							var dt = e.dataTransfer;
-							var files = dt.files;
-
-							fnHandleFileUploads(files);
-						
-						}
-
-
-
-						function fnHandleFileUploads(files) {
+						fnHandleFileUploads = function (event) {		//Globalized for access from Input onclick event
 						  
 						  
-							files = [...files]   //Spread operator: https://zendev.com/2018/05/09/understanding-spread-operator-in-javascript.html
+							var files = [...event.originalEvent.dataTransfer.files]   //Spread operator: https://zendev.com/2018/05/09/understanding-spread-operator-in-javascript.html
 							
 							if (files.length > 2) { 
 								
-								alert("More than 2 files uploaded.")
+								w2alert("More than 2 files uploaded.")
 								return;
 							
 							} 
@@ -121,7 +88,7 @@
 
 								if (!csvFile && !gltfFile){
 									
-									alert("Only .csv and .gltf files can be processed.")
+									w2alert("Only .csv and .gltf files can be processed.")
 									return;
 									
 								} //if			
@@ -148,7 +115,7 @@
 								
 								if (!gltfFile) {
 								
-									alert("A .gltf was not uploaded.")
+									w2alert("A .gltf was not uploaded.")
 									return;			
 								
 								} //if
@@ -162,6 +129,8 @@
 							
 							//Pattern: https://threejs.org/docs/index.html#api/en/loaders/managers/LoadingManager.setURLModifier
 							function fnLoadGLTFVisual (gltfFile, csvData){
+							
+								w2popup.close();
 
 								var gltfURL;
 								var manager = new THREE.LoadingManager();
@@ -178,7 +147,7 @@
 										//scene.add( gltfVisual.scene );
 										//Process gltfVisual with or without csvData in My Data Visualizer
 
-
+										console.log(gltfVisual);
 
 										URL.revokeObjectURL( gltfURL ) ;   //Must cleanup URL
 										$(".spinner").hide();	
@@ -192,8 +161,16 @@
 
 							
 						} //fnHandleFileUploads
-							
 
+
+						// ************************ Drag and drop ***************** //
+						let dropArea = $("#drop-area");		
+							dropArea.on("dragenter dragover dragleave drop",(event) => {event.preventDefault(); event.stopPropagation(); });						
+							dropArea.on("dragenter dragover", () => {dropArea.addClass('highlight')});
+							dropArea.on("dragleave drop", () => {dropArea.removeClass('highlight')});
+							
+						dropArea.on("drop",fnHandleFileUploads);  //Not working proplery with jQuery...useCapture set to true
+	
 
 					} //fnGetFileUploads
 
