@@ -29,7 +29,7 @@ var translations = {
 		"helpText1":					"<b>Mouse</b>: <br><br>Left: Rotate",
 		"helpText2":					"<br>Scroll: Zoom <br>Right: Pan<br>Left Double-Click:",
 //Changed 
-		"helpText3":					"<br>CtrlKey + Left: Select an object and display details in Controls area<br><br><b>Keys</b>:<br><br> Arrows: Pan <br>'b': 'B'ird's-eye View/Rotate <br>'c' or 'Esc': 'C'lear Data Selections<br>'d': 'D'ata Grid<br>'h': 'H'ide/Re-display Menu",	
+		"helpText3":					"<br>CtrlKey + Left: Search isolate and object.<br><br><b>Keys</b>:<br><br> Arrows: Pan <br>'b': 'B'ird's-eye View/Rotate <br>'c' or 'Esc': 'C'lear Data Selections<br>'d': 'D'ata Grid<br>'h': 'H'ide/Re-display Menu",	
 		"datGuiFolders.refresh":					"Refresh Data",    
 
 		"datGuiFolders.clearSelection":					"Clear Selection(s) & Search",

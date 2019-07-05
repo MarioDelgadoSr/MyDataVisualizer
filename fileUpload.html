@@ -1,12 +1,14 @@
 <div>
 		<div id="drop-area">
-			<center><h1><img src="img/MyDataVisualizerLogo.png" height="100" width="100"> My Data Visualizer</h1></center>
+			<!--<center><h1><img src="img/MyDataVisualizerLogo.png" height="100" width="100"> My Data Visualizer</h1></center> -->
+			<center><span id="mdvScales" height="100" width="100"></span></center>
+			<center><span style="font-size: x-large; font-family: Arial, Helvetica, sans-serif;">MY DATA VISUALIZER<span></center>
 			<p>
 				<center><img src="img/dragDrop.png" height="115" width="115"></center><br>
 				<ul>
-					<li>glTF file (.gltf) for your visual with embedded data.</li>
+					<li>A glTF file (.gltf) for your visual with embedded data.</li>
 					<br><br><center><i><b>Or</b></i></center><br><br>
-					<li>glTF file (.gltf) for your visual and the csv (.csv) with the visual's data.</li>
+					<li>A glTF file (.gltf) for your visual and the csv (.csv) with the visual's data.</li>
 				</ul>
 			</p>
 			<input type="file" id="fileElem" multiple accept=".gltf,.csv" onchange="fnHandleFileUploads({originalEvent: {dataTransfer: {files: this.files} } } )" style="display:none;">
@@ -30,9 +32,6 @@
 			</ul>	
 			</div>		
 			<br>
-
-			  
-			<center><div class="spinner" style="display:none;" ></div></center>
 			
 		
 		</div>

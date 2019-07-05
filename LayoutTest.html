@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>W2UI Demo: layout-1</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css" />
+    <title>W2UI Demo: layout-9</title>
+
+
+		<!--jQuery-->
+		<script src="lib/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+		<!--w2ui http://w2ui.com/web/ -->
+		<link rel="stylesheet" type="text/css" href="css/w2ui.min.css" />			
+		<script src="lib/w2ui.1.5x.min.js" charset="utf-8"></script> 
+		<!-- <script src="lib/w2ui.1.5x.js" charset="utf-8"></script> -->
+
+
+
 </head>
+<body>
 
-	<script>
+<script type="text/javascript">
 
-	$(function () {
-	   
-		$("<div id='layout'></div>")
-			.css({"margin":"0px", "position": "absolute", "width": "100%", "height": "400px"})
-			.appendTo(document.body)	
-			.w2layout({ name: 'parent', panels: [{ type: "top", size: "100%"}] });
-	   
-		w2ui.parent.html("top",$().w2layout({ name: 'child', panels: [ { type: 'top', size: "50%" } ]}) );
-	  
-		w2ui.child.destroy();
-			
-		/*Now resize browser window and check console error for:
-
-		w2ui.min.js:9 Uncaught TypeError: Cannot read property 'resize' of undefined
-			at resize (w2ui.min.js:9)
-			at dispatch (jquery.min.js:3)
-			at r.handle (jquery.min.js:3)
+$(function () {    
 		
-		*/
-		
-	});
-	</script>
+		// Set margin as per: https://github.com/vitmalina/w2ui/issues/105#issuecomment-17793381
+		$(document.body).css("margin","0px");																		
+ 		
+		//$("<div></div>").css({"position": "absolute", width: "100%", "height": "100%"}).appendTo(document.body) 	// Tooltip works with layout container is a div	
+		$(document.body).css({"position": "absolute", "width": "100%", "height": "100%"}) 							// Tooltip doesn't work when layout container is document.body					
+			.w2layout(	{ 	name: 'parent', 
+							panels: [ {  type: "top", size: "100%", toolbar: {items: [{type: "button", id:"b", tooltip: "tootip", caption:"Button"}]} } ] 
+						}); //w2layout
+						
+		w2ui.parent.get("top").toolbar.tooltip = "top|right";
+
+}); //function ()
 
 
-	</head>
 
-	<body></body>
+</script>
 
+</body>
 </html>

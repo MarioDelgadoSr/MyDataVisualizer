@@ -31,6 +31,19 @@
   background: #ddd;
 }
 
+/*https://stackoverflow.com/questions/7059394/how-to-position-a-table-at-the-center-of-div-horizontally-vertically */
+.wrapper {
+    position: absolute;
+    left: 50%; top: 50%; /*move the object to the center of the parent object*/
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*these 5 settings change the base (or registration) point of the wrapper object to it's own center - so we align child center with parent center*/
+}
+
+
 
 /******************************************************************************
  * CSS Spinner
