@@ -1,8 +1,9 @@
 ﻿// Example: translate('mdvAppTitle');
-
+//http://w2ui.com/web/docs/1.5/w2utils.locale
 	
 	const languages = [
 						 {code: 'en', 	text: 'English', 			tooltip:'English',				locale: 'en-us'},
+						 /*
 						 {code: 'es', 	text: 'Español', 			tooltip:'Spanish',				locale: 'es-es'},
 						 //{code: 'sv', 	text: 'Svenska', 			tooltip:'Swedish',				locale: 'xx-xx'},
 						 //{code: 'fi', 	text: 'Suomi', 				tooltip:'Finnish',				locale: 'xx-xx'},
@@ -32,6 +33,7 @@
 						 //{code: 'sr', 	text: 'Српски', 			tooltip:'Serbian',				locale: 'xx-xx'},
 						 {code: 'sk', 	text: 'Slovenčina', 		tooltip:'Slovak',				locale: 'sk-sk'},
 						 {code: 'sl', 	text: 'Slovenščina', 		tooltip: 'Slovenian',			locale: 'sl-si'}
+						 */
 				 ];
 	
 	
