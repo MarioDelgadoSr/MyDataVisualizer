@@ -4431,7 +4431,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 11,
             "name": "Forklift",
@@ -4474,7 +4474,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 38,
             "name": "FrontWheels",
@@ -4516,7 +4516,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 36,
             "name": "Lights",
@@ -4559,7 +4559,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 39,
             "name": "RearWheels",

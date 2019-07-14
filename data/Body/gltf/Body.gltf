@@ -575,7 +575,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 1,
             "name": "Brain",
@@ -598,7 +598,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 2,
             "name": "Heart",
@@ -621,7 +621,7 @@
         },
         {
             "extras": {
-                "visualize": 1.0
+                
             },
             "mesh": 3,
             "name": "Kidneys",
