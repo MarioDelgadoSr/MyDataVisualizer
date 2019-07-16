@@ -7,9 +7,9 @@
 			<p>
 				<center><img src="img/dragDrop.png" height="115" width="115"></img></center><br />
 				<ul>
-					<li>A glTF file (.gltf) for your visual with embedded data.</li>
+					<li>A glTF file (<a target="_blank" href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#glb-file-format-specification">.gltf or .glb</a>) for your visual with embedded data.</li>
 					<br /><br /><center><i><b>Or</b></i></center><br /><br />
-					<li>A glTF file (.gltf) for your visual and the csv (.csv) with the visual's data.</li>
+					<li>A glTF file (<a target="_blank" href="https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#glb-file-format-specification">.gltf or .glb</a>) for your visual and the csv (<a target="_blank" href="https://en.wikipedia.org/wiki/Comma-separated_values">.csv</a>) with the visual's data.</li>
 				</ul>
 			</p>
 			<input type="file" id="fileElem" multiple="true" accept=".gltf,.csv" onchange="fnHandleFileUploads({originalEvent: {dataTransfer: {files: this.files} } } )" style="display:none;"></input>
@@ -26,11 +26,11 @@
 			<div><b>Note</b>: This version of <b><i>My Data Visualizer</i></b>: 
 				<ul>
 					<li>Supports <a target= "_blank" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0">glTF 2.0</a>.  
-						<span>Use the </span><a target="_blank"  href="http://github.khronos.org/glTF-Validator/">Khronos glTF Validator</a> to validate your gltf file(s).
+						<span>Use the </span><a target="_blank"  href="http://github.khronos.org/glTF-Validator/">Khronos glTF Validator</a> to validate your .gltf/.glb file(s).
 					</li>
 					<li><span>Requires that the</span>
 						<a target="_blank" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#binary-data-storage">buffers</a> and 
-						<a target="_blank" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#images">images</a> in the glTF file are referenced with embedded
+						<a target="_blank" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#images">images</a> for the .gltf file are referenced with embedded
 						<a target="_blank" href="https://github.com/KhronosGroup/glTF/tree/master/specification/2.0#uris">Data URIs.</a>
 					</li>
 				</ul>	
