@@ -6,7 +6,7 @@ BodyData =
     "DOCTOR_VISITS": 3,
     "LAB_ORDERS": 0,
 	"DATE_LAST_TEST": 1548997200000,
-    "COLOR_INSURANCE_CLAIMS": "green"
+    "COLOR_INSURANCE_CLAIMS": "yellow"
   },
   {
     "BODY_PART": "Heart",
@@ -22,6 +22,6 @@ BodyData =
     "DOCTOR_VISITS": 5,
     "LAB_ORDERS": 1,
 	"DATE_LAST_TEST": 1564632000000,
-    "COLOR_INSURANCE_CLAIMS": "yellow"
+    "COLOR_INSURANCE_CLAIMS": "green"
   }
 ];
