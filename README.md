@@ -11,7 +11,7 @@ Download zip of code, unzip to a folder and launch index.html from a web server 
 
 ## Documentation
 
-* [My Data Visualizer Documentation] (https://github.com/MarioDelgadoSr/MyDataVisualizerDoc)
+* [My Data Visualizer Documentation](https://github.com/MarioDelgadoSr/MyDataVisualizerDoc)
 
 ## Built With
 
