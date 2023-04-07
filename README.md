@@ -7,7 +7,7 @@ Download zip of code, unzip to a folder and launch index.html from a web server 
 
 ## Demonstration	
 
-* [My Data Visualizer Demo](http://mydatavisualizer.com/demo/)
+* [My Data Visualizer Demo](https://mariodelgadosr.github.io/MyDataVisualizer/)
 
 ## Documentation
 
@@ -17,6 +17,7 @@ Download zip of code, unzip to a folder and launch index.html from a web server 
 
 The following frameworks and applications were used to build ***My Data Visualizer***:
 
+* [DataVisual](https://github.com/MarioDelgadoSr/DataVisual)
 * [D3.js](https://d3js.org/) - D3 framework
 * [Three.js](https://threejs.org/) - Three.js framework
 * [glTF](https://www.khronos.org/gltf/) - Khronos' graphic library Transmission Format
@@ -32,5 +33,5 @@ The following frameworks and applications were used to build ***My Data Visualiz
 
 ## License
 
-* [***My Data Visualizer***](http://MyDataVisualizer.com) is free for all non-profit entities.  
+* [***My Data Visualizer***](https://mariodelgadosr.github.io/MyDataVisualizer/) is free for all non-profit entities.  
 * Businesses and commercial enterprises are granted a full-use license as long as they make their application freely available to non-profits. 
