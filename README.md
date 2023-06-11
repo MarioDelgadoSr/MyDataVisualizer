@@ -1,6 +1,8 @@
 # My Data Visualizer 
 Data Visualization for WebGL
 
+![Screen Shot of My Data Visualizer Body Demo](https://github.com/MarioDelgadoSr/MyDataVisualizerDoc/blob/master/img/MyDataVisualizerBodyScreenShot.png)
+
 ## Installation
 
 Download zip of code, unzip to a folder and launch index.html from a web server with a [WebGL enabled browser](https://get.webgl.org/). 
